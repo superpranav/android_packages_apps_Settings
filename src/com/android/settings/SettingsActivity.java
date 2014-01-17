@@ -222,6 +222,8 @@ public class SettingsActivity extends SettingsDrawerActivity
 
     private static final String PNS_FRAGMENT = "com.android.settings.PureNexusSettings";
 
+    private static final String SUPERSU_FRAGMENT = "com.android.settings.SuperSU";
+
     private String mFragmentClass;
 
     private CharSequence mInitialTitle;
@@ -1014,6 +1016,13 @@ public class SettingsActivity extends SettingsDrawerActivity
             finish();
             return null;
         }
+        if (SUPERSU_FRAGMENT.equals(fragmentName)) {
+            Intent superSUIntent = new Intent();
+            superSUIntent.setClassName("eu.chainfire.supersu", "eu.chainfire.supersu.MainActivity");
+            startActivity(superSUIntent);
+            finish();
+            return null;
+        }
         if (validate && !isValidFragment(fragmentName)) {
             throw new IllegalArgumentException("Invalid fragment for this activity: "
                     + fragmentName);
@@ -1107,6 +1116,16 @@ public class SettingsActivity extends SettingsDrawerActivity
         setTileEnabled(new ComponentName(packageName,
                         Settings.PureNexusSettingsActivity.class.getName()),
                 pnsSupported, isAdmin, pm);
+
+        // SuperSU
+        boolean suSupported = false;
+        try {
+            suSupported = (getPackageManager().getPackageInfo("eu.chainfire.supersu", 0).versionCode >= 185);
+        } catch (PackageManager.NameNotFoundException e) {
+        }
+        setTileEnabled(new ComponentName(packageName,
+                        Settings.SuperSUActivity.class.getName()),
+                suSupported, isAdmin, pm);
 
         // Reveal development-only quick settings tiles
         DevelopmentTiles.setTilesEnabled(this, showDev);
