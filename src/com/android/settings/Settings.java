@@ -162,4 +162,8 @@ public class Settings extends SettingsActivity {
     public static class SuperSUActivity extends SettingsActivity { /* empty */ }
     public static class SuperUserActivity extends SettingsActivity { /* empty */ }
     public static class AmbientDisplaySettingsActivity extends SettingsActivity { /* empty */ }
+
+    // Aospa additions
+    public static class ButtonsSettingsActivity extends SettingsActivity { /* empty */ }
+
 }

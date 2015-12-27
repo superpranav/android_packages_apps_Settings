@@ -243,6 +243,7 @@ public class SettingsActivity extends SettingsDrawerActivity
             //custom_section
             PureSettings.class.getName(),
             //device_section
+            Settings.ButtonsSettingsActivity.class.getName(),
             Settings.HomeSettingsActivity.class.getName(),
             Settings.SoundSettingsActivity.class.getName(),
             Settings.DisplaySettingsActivity.class.getName(),
@@ -357,6 +358,7 @@ public class SettingsActivity extends SettingsDrawerActivity
             WifiInfo.class.getName(),
             PureSettings.class.getName(),
             AmbientSettings.class.getName()
+            ButtonsSettings.class.getName()
     };
 
 
