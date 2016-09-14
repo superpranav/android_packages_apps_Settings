@@ -18,6 +18,7 @@
   <!-- Dashboard -->
     <string name="header_category_custom">ROM Control</string>
     <string name="custom_settings_title">PureNexus settings</string>
+    <string name="substratum_title">Substratum</string>
     <string name="supersu_title">SuperSU</string>
 
 <!-- Development Settings -->
