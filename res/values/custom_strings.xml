@@ -17,6 +17,7 @@
 <!-- Custom Settings -->    
   <!-- Dashboard -->
     <string name="header_category_custom">ROM Control</string>
+    <string name="custom_settings_title">PureNexus settings</string>
 
 <!-- Development Settings -->
     <!-- Dev Options Enabled by Default -->
