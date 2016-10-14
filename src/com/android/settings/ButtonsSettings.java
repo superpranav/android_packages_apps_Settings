@@ -59,7 +59,6 @@ public class ButtonsSettings extends SettingsPreferenceFragment implements
 
     private static final String KEY_NAVIGATION_BAR         = "navigation_bar";
     private static final String KEY_SWAP_NAVIGATION_KEYS   = "swap_navigation_keys";
-    private static final String KEY_SWAP_SLIDER_ORDER      = "swap_slider_order";
     private static final String KEY_BUTTON_BRIGHTNESS      = "button_brightness";
 
     private static final String KEY_HOME_LONG_PRESS        = "hardware_keys_home_long_press";
@@ -103,7 +102,6 @@ public class ButtonsSettings extends SettingsPreferenceFragment implements
 
     private SwitchPreference mNavigationBar;
     private SwitchPreference mSwapNavigationkeys;
-    private SwitchPreference mSwapSliderOrder;
     private SwitchPreference mButtonBrightness;
 
     @Override
@@ -385,10 +383,6 @@ public class ButtonsSettings extends SettingsPreferenceFragment implements
             // Disable when navigation bar is disabled.
             mSwapNavigationkeys.setEnabled(navigationBarEnabled
                     || hasBack && hasAppSwitch);
-        }
-
-        if (mSwapSliderOrder != null) {
-            mSwapSliderOrder.setChecked(swapSliderOrderEnabled);
         }
 
         if (mButtonBrightness != null) {
