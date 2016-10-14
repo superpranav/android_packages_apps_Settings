@@ -220,8 +220,6 @@ public class SettingsActivity extends SettingsDrawerActivity
 
     private static final int REQUEST_SUGGESTION = 42;
 
-    private static final String PNS_FRAGMENT = "com.android.settings.PureNexusSettings";
-
     private static final String SUPERSU_FRAGMENT = "com.android.settings.SuperSU";
 
     private static final String SUPERUSER_FRAGMENT = "com.android.settings.SuperUser";
@@ -1013,13 +1011,6 @@ public class SettingsActivity extends SettingsDrawerActivity
      */
     private Fragment switchToFragment(String fragmentName, Bundle args, boolean validate,
             boolean addToBackStack, int titleResId, CharSequence title, boolean withTransition) {
-        if (PNS_FRAGMENT.equals(fragmentName)) {
-            Intent pnsIntent = new Intent();
-            pnsIntent.setClassName("com.android.purenexussettings", "com.android.purenexussettings.TinkerActivity");
-            startActivity(pnsIntent);
-            finish();
-            return null;
-        }
         if (SUPERSU_FRAGMENT.equals(fragmentName)) {
             Intent superSUIntent = new Intent();
             superSUIntent.setClassName("eu.chainfire.supersu", "eu.chainfire.supersu.MainActivity");
@@ -1124,16 +1115,6 @@ public class SettingsActivity extends SettingsDrawerActivity
         setTileEnabled(new ComponentName(packageName,
                         Settings.DevelopmentSettingsActivity.class.getName()),
                 showDev, isAdmin, pm);
-
-        // PureNexus Settings
-        boolean pnsSupported = false;
-        try {
-            pnsSupported = (getPackageManager().getPackageInfo("com.android.purenexussettings", 0).versionCode > 0);
-        } catch (PackageManager.NameNotFoundException e) {
-        }
-        setTileEnabled(new ComponentName(packageName,
-                        Settings.PureNexusSettingsActivity.class.getName()),
-                pnsSupported, isAdmin, pm);
 
         // Substratum
         boolean subSupported = false;
