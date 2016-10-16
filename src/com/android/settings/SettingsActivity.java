@@ -357,7 +357,7 @@ public class SettingsActivity extends SettingsDrawerActivity
             WifiAPITest.class.getName(),
             WifiInfo.class.getName(),
             PureSettings.class.getName(),
-            AmbientSettings.class.getName()
+            AmbientSettings.class.getName(),
             ButtonsSettings.class.getName()
     };
 
