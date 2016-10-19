@@ -166,4 +166,6 @@ public class Settings extends SettingsActivity {
     // Aospa additions
     public static class ButtonsSettingsActivity extends SettingsActivity { /* empty */ }
 
+    public static class DisplayRotationActivity extends SettingsActivity { /* empty */ }
+
 }
