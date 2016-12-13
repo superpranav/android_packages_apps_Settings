@@ -356,7 +356,7 @@ public class SettingsActivity extends SettingsDrawerActivity
             WifiInfo.class.getName(),
             MasterClear.class.getName(),
             NightDisplaySettings.class.getName(),
-            ButtonsSettings.class.getName()
+            ButtonsSettings.class.getName(),
 	    LegendSettings.class.getName(),
     };
 
